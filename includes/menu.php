@@ -17,24 +17,24 @@
 
       <li class="nav-item">
         <div class="dropdown">
-          <a href="#" class="nav-link dropdown-toggle active" id="dropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-current="page">
-            <i class="fa fa-tasks Iconlarge"></i><p>Tarefas</p>
+          <a href="#" class="nav-link dropdown-toggle active" id="dropdownTarefas" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-current="page">
+            <i class="fa fa-wrench Iconlarge"></i><p>Tarefas</p>
           </a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="cad_tarefas.php">Cadastro de Tarefas</a>
-            <a class="dropdown-item" href="dados_tarefas.php">Lista de Tarefas</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownTarefas">
+            <a class="dropdown-item" href="cad_tarefas.php"><i class="fas fa-chevron-right"></i> Cadastro de Tarefas</a>
+            <a class="dropdown-item" href="dados_tarefas.php"><i class="fas fa-chevron-right"></i> Lista de Tarefas</a>
           </div>
         </div>
       </li>
 
       <li class="nav-item">
         <div class="dropdown">
-          <a href="#" class="nav-link dropdown-toggle active" id="dropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-current="page">
+          <a href="#" class="nav-link dropdown-toggle active" id="dropdownVendas" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-current="page">
             <i class="fa fa-tasks Iconlarge"></i><p>Vendas</p>
           </a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="cad_vendas.php">Cadastro de Vendas</a>
-            <a class="dropdown-item" href="dados_vendas.php">Lista de Vendas</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownVendas">
+            <a class="dropdown-item" href="cad_vendas.php"><i class="fas fa-chevron-right"></i> Cadastro de Vendas</a>
+            <a class="dropdown-item" href="dados_vendas.php"><i class="fas fa-chevron-right"></i> Lista de Vendas</a>
           </div>
         </div>
       </li>

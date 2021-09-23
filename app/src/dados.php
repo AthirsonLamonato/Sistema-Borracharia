@@ -3,11 +3,6 @@
 
 	require_once 'app/Db/Database.php';
 
-
-	ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(E_ALL);
-
 	use \App\Db\Database;
 	use \PDO;
 	
@@ -28,7 +23,6 @@
 				'descricao' => $this->descricao,
 			]);
 			return true;
-
 		}
 
 		public function atualizar(){
@@ -43,12 +37,12 @@
 			return (new Database('tarefas'))->delete('id = '.$this->id);
 		}
 
-		public static function getTarefas($where = null, $order = null, $limit = null){
-				return (new Database('tarefas'))->select($where,$order,$limit)->fetchAll(PDO::FETCH_CLASS);
+		public static function getTarefas($where = null, $order = null, $limit = null, $fields = "id, nome, valor, descricao"){
+				return (new Database('tarefas'))->select($where,$fields)->fetchAll(PDO::FETCH_CLASS);
 		}
 
 		public static function getTarefa($id){
-			return (new Database('tarefas'))->select('id = '.$id)->fetchObject(self::class);
+			return (new Database('tarefas'))->select('id = '.$id,$fields = "id, nome, valor, descricao")->fetchObject(self::class);
 		}
 		
 	}
@@ -62,6 +56,7 @@
 		public $data_pagamento;
 		public $data_servico;
 		public $total_servico;
+    public $observacao;
 
 		public function cadastrar(){
 
@@ -71,11 +66,12 @@
 			$this->id = $objDatabase->insert([
 				'placa' => $this->placa,
 				'cor' => $this->cor,
-				'tarefa' => $this->tarefa,	
+				'tarefaid' => $this->tarefaid,	
 				'tipo_pagamento' => $this->tipo_pagamento,
 				'data_pagamento' => $this->data_pagamento,
 				'data_servico' => $this->data_servico,
-				'total_servico' => $this->data_servico,
+				'total_servico' => $this->total_servico,
+				'observacao' => $this->observacao
 			]);
 			return true;
 
@@ -85,11 +81,12 @@
 			return (new Database('vendas'))->update('id = '.$this->id, [
 				'placa' => $this->placa,
 				'cor' => $this->cor,
-				'tarefa' => $this->tarefa,	
+				'tarefaid' => $this->tarefaid,	
 				'tipo_pagamento' => $this->tipo_pagamento,
 				'data_pagamento' => $this->data_pagamento,
 				'data_servico' => $this->data_servico,
-				'total_servico' => $this->data_servico,
+				'total_servico' => $this->total_servico,
+				'observacao' => $this->observacao
 			]);
 		}
 
@@ -101,12 +98,17 @@
 			return (new Database('tarefas'))->selectTarefas()->fetchAll(PDO::FETCH_CLASS);
 		}
 
-		public static function getVendas(){
-				return (new Database('vendas'))->selectVendas()->fetchAll(PDO::FETCH_CLASS);
-		}
+    public static function AllVendas(){
+      return (new Database('vendas'))->selectVendasMensais()->fetchAll(PDO::FETCH_CLASS);
+    }
 
-		public static function getVenda($id){
-			return (new Database('vendas'))->select('id = '.$id)->fetchObject(self::class);
-		}
+		public static function getVendas(){
+      return (new Database('vendas'))->selectVendas()->fetchAll(PDO::FETCH_CLASS);
+      
+    }
+
+    public static function getVenda($id){
+      return (new Database('vendas'))->selectVendas($id)->fetchObject(self::class);
+    }
 		
 	}

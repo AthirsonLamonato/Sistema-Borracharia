@@ -19,12 +19,17 @@ if(!$objVendas instanceof Vendas){
   exit;
 }
 
-if (isset($_POST['nome'], $_POST['valor'], $_POST['descricao'])) {
-  $objVendas->nome = $_POST['nome'];
-  $objVendas->valor = $_POST['valor'];
-  $objVendas->descricao = $_POST['descricao'];
-
+if (isset($_POST['placa'], $_POST['cor'], $_POST['tarefaid'], $_POST['tipo_pagamento'], $_POST['data_pagamento'], $_POST['data_pagamento'], $_POST['data_servico'], $_POST['total_servico'], $_POST['observacao'])) {
+  $objVendas->placa = $_POST['placa'];
+  $objVendas->cor = $_POST['cor'];
+  $objVendas->tarefaid = $_POST['tarefaid'];
+  $objVendas->tipo_pagamento = $_POST['tipo_pagamento'];
+  $objVendas->data_pagamento = $_POST['data_pagamento'];
+  $objVendas->data_servico = $_POST['data_servico'];
+  $objVendas->total_servico = $_POST['total_servico'];
+  $objVendas->observacao = $_POST['observacao'];
   $objVendas->atualizar();
+
   header('location: index.php?status=success');
 }
 

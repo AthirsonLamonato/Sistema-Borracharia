@@ -8,9 +8,7 @@
 						<p>Deseja realmente excluir a tarefa <strong><?= $objTarefas->nome ?></strong>?</p>
 					</div>
 					<div class="form-group">
-						<a href="index.php">
-							<button type="button" class="btn btn-success">Cancelar</button>
-						</a>
+						<a href="index.php" class="btn btn-success">Cancelar</a>
 						<button type="submit" name="excluir" class="btn btn-danger">Excluir</button>
 					</div>
 				</form>

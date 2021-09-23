@@ -5,12 +5,10 @@
 				<h2 class="mt-3">Excluir Venda</h2>
 				<form method="post">
 					<div class="form-group">
-						<p>Deseja realmente excluir a venda realizada para o carro com placa <strong><?= $objVendas->nome ?></strong>?</p>
+						<p>Deseja realmente excluir a venda realizada para o carro com placa <strong><?= $objVendas->placa ?></strong>?</p>
 					</div>
 					<div class="form-group">
-						<a href="index.php">
-							<button type="button" class="btn btn-success">Cancelar</button>
-						</a>
+            <a href="index.php" class="btn btn-success">Cancelar</a>
 						<button type="submit" name="excluir" class="btn btn-danger">Excluir</button>
 					</div>
 				</form>

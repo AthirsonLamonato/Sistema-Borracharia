@@ -40,9 +40,8 @@
                 <label class="col-2 required bmd-label-static mt-2">Tarefa</label>
                 <div class="col-10">
                   <select class="form-control" name="tarefa" multiple required>
-                    <option value="<?=$objVendas->tarefa?>" selected><?=$objVendas->tarefa?></option>
                     <?php foreach ($objTarefas as $key => $object) :?>
-                      <option value="<?=$object->nome?>"><?=$object->nome?></option>
+                      <option value="<?=$object->id?>"><?=$object->nome?></option>
                     <?php endforeach; ?>
                   </select>
                 </div>
@@ -89,21 +88,21 @@
             
             <fildset>
               <legend>
-                <h4><i class="fa fa-money"></i> Total</h4>
+                <h4><i class="fa fa-dollar-sign"></i> Total</h4>
               </legend>
             </fildset>
             <div class="card-body">
               <div class="form-group row bmd-form-group">
                 <label class="col-2 required bmd-label-static mt-2">Total</label>
                 <div class="col-10">
-                  <input type="number" name="total_servico" class="form-control" placeholder="Informe o total da venda" required value="<?=$objVendas->total_servico?>">
+                  <input type="text" name="total_servico" class="form-control" placeholder="Informe o total da venda" required value="<?=$objVendas->total_servico?>">
                 </div>
               </div>
 
               <div class="form-group row bmd-form-group">
                 <label class="col-2 bmd-label-static mt-2">Observações</label>
                 <div class="col-10">
-                  <textarea type="text" name="obs" class="form-control" placeholder="Informe uma observação" value="<?=$objVendas->total_servico?>"></textarea>
+                  <textarea type="text" name="observacao" class="form-control" placeholder="Informe uma observação"><?=$objVendas->observacao?></textarea>
                 </div>
               </div>
 

@@ -22,7 +22,7 @@
                   <div class="form-group row">
                     <label class="bmd-label-floating  col-2 required">Descrição</label>
                     <div class="col-10">
-                      <textarea type="text" name="descricao" class="form-control" placeholder="Informe a descrição da tarefa" required value="<?=$objTarefas->descricao?>"></textarea>
+                      <textarea type="text" name="descricao" class="form-control" placeholder="Informe a descrição da tarefa" required><?=$objTarefas->descricao?></textarea>
                     </div>
                   </div>
 

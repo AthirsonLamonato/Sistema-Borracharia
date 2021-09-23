@@ -185,6 +185,10 @@ h6,
     color: red;
 }
 
+.valor_mensal{
+  display: inline;
+}
+
 
 /* cards */
 
