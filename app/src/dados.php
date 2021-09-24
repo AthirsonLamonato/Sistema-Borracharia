@@ -37,12 +37,12 @@
 			return (new Database('tarefas'))->delete('id = '.$this->id);
 		}
 
-		public static function getTarefas($where = null, $order = null, $limit = null, $fields = "id, nome, valor, descricao"){
-				return (new Database('tarefas'))->select($where,$fields)->fetchAll(PDO::FETCH_CLASS);
+		public static function getTarefas(){
+				return (new Database('tarefas'))->selectTarefas()->fetchAll(PDO::FETCH_CLASS);
 		}
 
 		public static function getTarefa($id){
-			return (new Database('tarefas'))->select('id = '.$id,$fields = "id, nome, valor, descricao")->fetchObject(self::class);
+			return (new Database('tarefas'))->selectTarefas($id)->fetchObject(self::class);
 		}
 		
 	}
@@ -51,7 +51,7 @@
 		public $id;
 		public $placa;
 		public $cor;
-		public $tarefa;
+		public $tarefaid;
 		public $tipo_pagamento;
 		public $data_pagamento;
 		public $data_servico;
@@ -104,7 +104,6 @@
 
 		public static function getVendas(){
       return (new Database('vendas'))->selectVendas()->fetchAll(PDO::FETCH_CLASS);
-      
     }
 
     public static function getVenda($id){

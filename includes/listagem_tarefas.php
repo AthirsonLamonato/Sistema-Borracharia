@@ -33,7 +33,7 @@
 	$resultados = strlen($resultados) ? $resultados : '<tr><td colspan="6" class="text-center">Não há serviços cadastrados</td></tr>'
 ?>
   <div class="content">
-    <div class="container-fluid">
+    <div class="container-fluid container-principal">
       <div class="row">
         <div class="col-md-12">
           <div class="card card-plain">

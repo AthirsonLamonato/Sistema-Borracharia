@@ -1,5 +1,5 @@
       <div class="content">
-        <div class="container-fluid">
+        <div class="container-fluid container-principal">
           <div class="row">
             <div class="card">
               <div class="card-header card-header-primary">

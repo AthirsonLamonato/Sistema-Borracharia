@@ -1,8 +1,9 @@
 <?php
 define('NAV', 'editar_vendas');
 define('TITLE', 'Editar Vendas');
-
+  
 require_once 'app/src/dados.php';
+
 
 use \App\Entity\Vendas;
 $objTarefas = Vendas::AllTarefas();

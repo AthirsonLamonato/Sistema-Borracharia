@@ -57,7 +57,43 @@
 
 			return true;
 		}
-		
+
+    public function update($where, $values){
+      //dados da query
+      $fields = array_keys($values);
+      
+      //monta a query
+      $query = 'UPDATE '.$this->table.' SET '.implode('=?,', $fields).'=? WHERE '.$where;
+      
+      //executa a query
+      $this->execute($query, array_values($values));
+      
+      return true;
+    }
+
+    /* Tarefas */
+
+    public function selectTarefas($id = 0){
+      $valor = $id;
+      $valor = str_replace(' ', '%', strtoupper($valor));
+
+      $query = 'SELECT 
+                  t.id, 
+                  t.nome, 
+                  t.descricao, 
+                  t.valor 
+                FROM 
+                  tarefas t 
+                WHERE 
+                  t.id = :ID 
+                  or :ID = 0 
+                  ORDER BY nome ASC';			
+      
+      return $this->execute($query,[':ID' => $valor]);
+    }
+
+    /* Vendas */
+    
 		public function selectVendas($id = 0){
       $valor = $id;
       $valor = str_replace(' ', '%', strtoupper($valor));
@@ -104,36 +140,7 @@
                   
       return $this->execute($query);
     }
-      
-    public function selectTarefas(){
-      
-      $query = 'SELECT t.id, t.nome FROM tarefas t ORDER BY nome ASC';			
-      
-      return $this->execute($query);
-    }
-      
-    public function select($where = null, $fields){
-      //dados da query
-      $where = strlen($where) ? 'WHERE '.$where : '';
-      
-      //monta a query
-      $query = 'SELECT '.$fields.' FROM '.$this->table.' '.$where.'';			
-      return $this->execute($query);
-    }
-      
-    public function update($where, $values){
-      //dados da query
-      $fields = array_keys($values);
-      
-      //monta a query
-      $query = 'UPDATE '.$this->table.' SET '.implode('=?,', $fields).'=? WHERE '.$where;
-      
-      //executa a query
-      $this->execute($query, array_values($values));
-      
-      return true;
-      }
-      
-    }
 
+    
+  }
 ?>

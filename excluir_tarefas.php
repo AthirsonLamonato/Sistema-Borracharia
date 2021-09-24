@@ -3,7 +3,7 @@
 	define('NAV', 'excluir');
 	define('TITLE', 'Excluir tarefas');
 
-	require_once 'app/src/dados.php';
+  require_once 'app/src/dados.php';
 	use \App\Entity\Tarefas;
 
 	if(!isset($_GET['id']) or !is_numeric($_GET['id'])){

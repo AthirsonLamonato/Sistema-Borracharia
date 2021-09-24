@@ -1,5 +1,5 @@
 <div class="content">
-  <div class="container-fluid">
+  <div class="container-fluid container-principal-vendas">
     <div class="row">
       <div class="card">
         <div class="card-header card-header-primary">
@@ -15,14 +15,12 @@
             <div class="card-body">
               <div class="form-group row bmd-form-group">
                 <label class="col-2 required bmd-label-static mt-2">Placa do veículo</label>
-                <div class="col-10">
+                <div class="col-4">
                   <input type="text" name="placa" class="form-control" placeholder="Informe a placa do veículo" required value="<?=$objVendas->placa?>">
                 </div>
-              </div>
               
-              <div class="form-group row bmd-form-group">
                 <label class="col-2 required bmd-label-static mt-2">Cor do veículo</label>
-                <div class="col-10">
+                <div class="col-4">
                   <input type="text" name="cor" class="form-control" placeholder="Informe a cor do veículo" required value="<?=$objVendas->cor?>">
                 </div>
               </div>
@@ -72,14 +70,12 @@
             <div class="card-body">
               <div class="form-group row bmd-form-group">
                 <label class="col-2 bmd-label-static mt-2">Data de Pagamento</label>
-                <div class="col-10">
+                <div class="col-4">
                   <input type="date" name="data_pagamento" class="form-control" value="<?=$objVendas->data_pagamento?>">
                 </div>
-              </div>
-              
-              <div class="form-group row bmd-form-group">
+
                 <label class="col-2 required bmd-label-static mt-2">Data do Serviço</label>
-                <div class="col-10">
+                <div class="col-4">
                   <input type="date" name="data_servico" class="form-control" required value="<?=$objVendas->data_servico?>">
                 </div>
               </div>

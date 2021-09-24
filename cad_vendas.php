@@ -1,14 +1,14 @@
 <?php
 	define('NAV', 'cad_vendas');
 	define('TITLE', 'Cadastrar Vendas');
-    
-	require_once 'app/src/dados.php';
+
+  require_once 'app/src/dados.php';
 	use \App\Entity\Vendas;
-    
+
 	$objVendas = new Vendas;
   $objTarefas = Vendas::AllTarefas();
 
-    if (isset($_POST['placa'], $_POST['cor'], $_POST['tarefaid'], $_POST['tipo_pagamento'], $_POST['data_pagamento'], $_POST['data_pagamento'], $_POST['data_servico'], $_POST['total_servico'],$_POST['observacao'])) {
+    if (isset($_POST['placa'], $_POST['cor'], $_POST['tarefaid'], $_POST['tipo_pagamento'], $_POST['data_pagamento'], $_POST['data_servico'], $_POST['total_servico'],$_POST['observacao'])) {
         $objVendas->placa = $_POST['placa'];
         $objVendas->cor = $_POST['cor'];
         $objVendas->tarefaid = $_POST['tarefaid'];

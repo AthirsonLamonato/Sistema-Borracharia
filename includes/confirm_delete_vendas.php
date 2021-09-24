@@ -1,5 +1,5 @@
 <div class="content">
-	<div class="container-fluid">
+	<div class="container-fluid container-principal">
 		<div class="row">
 			<div class="col-md-12">
 				<h2 class="mt-3">Excluir Venda</h2>
