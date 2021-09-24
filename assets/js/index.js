@@ -13,7 +13,6 @@ $(document).ready(function () {
     placeholder: "Selecione um tipo de pagamento",
   });
 
-
   $("#btnChartDia").click(function () {
     chartDay(valorMensal);
   });
@@ -27,15 +26,7 @@ $(document).ready(function () {
     chartYear(valorMensal);
   });
 
-    jQuery('#btnpaginas').click(function(){
-        
-    });
-
 });
-
-
-    
-
 
 function chartDay(valorMensal) {
 
@@ -49,51 +40,45 @@ function chartDay(valorMensal) {
   // Create chart instance
   var chart = am4core.create("chartdivDia", am4charts.XYChart3D);
   
+ 
   chart.data = [{
     "Venda": "ISX9232",
-    "Total": valorMensal + 24,
+    "Total": valorMensal + 240,
   }, {
     "Venda": "ISX9212",
-    "Total": valorMensal - 24,
+    "Total": valorMensal,
   }];
   
   // Create axes
-  var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-  categoryAxis.dataFields.category = "Venda";
-  categoryAxis.title.text = "Vendas";
+  var EixoX = chart.xAxes.push(new am4charts.CategoryAxis());
+  EixoX.title.text = "Vendas";
+  EixoX.dataFields.category = "Venda";
   
-  categoryAxis.title.fontWeight = "bold";
-  categoryAxis.renderer.labels.template.fill = am4core.color("white");
-  categoryAxis.renderer.grid.template.fill = am4core.color("#2c3034");
-  categoryAxis.renderer.labels.template.stroke = am4core.color("white");
+  EixoX.title.fill = am4core.color("white");
+  EixoX.renderer.labels.template.stroke = am4core.color("white");
   
-  var  valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-  valueAxis.title.text = "Total";
-  valueAxis.title.fontWeight = "bold";
-  valueAxis.renderer.labels.template.fill = am4core.color("white");
-  valueAxis.renderer.grid.template.fill = am4core.color("#2c3034");
-  valueAxis.renderer.labels.template.stroke = am4core.color("white");
+  var  EixoY = chart.yAxes.push(new am4charts.ValueAxis());
+  EixoY.title.text = "Total";
+  EixoY.title.fill = am4core.color("white");
+  EixoY.renderer.labels.template.stroke = am4core.color("white");
   
-  // Create series
-  var series = chart.series.push(new am4charts.ColumnSeries3D());
-  series.dataFields.valueY = "Total";
-  series.dataFields.categoryX = "Venda";
-  series.name = "Total";
-  series.tooltipText = "{name}: [bold]{valueY}[/]";
+  var EixoXY3D = chart.series.push(new am4charts.ColumnSeries3D());
+  EixoXY3D.name = "Total";
+  EixoXY3D.dataFields.valueY = "Total";
+  EixoXY3D.dataFields.categoryX = "Venda";
   
-  series.title.fontWeight = "bold";
-  series.renderer.labels.template.fill = am4core.color("white");
-  series.renderer.grid.template.fill = am4core.color("#2c3034");
+  EixoXY3D.fill = am4core.color("#ffc107");
+  EixoXY3D.stroke = am4core.color("#ffc107");
   
-  var series2 = chart.series.push(new am4charts.ColumnSeries3D());
-  series2.dataFields.valueY = "Data"; 
-  series2.dataFields.categoryX = "Venda";
-  series2.name = "Data";
-  series2.tooltipText = "{name}: [bold]{valueY}[/]";
-  
-  series2.title.fontWeight = "bold";
-  series2.renderer.labels.template.fill = am4core.color("white");
-  series2.renderer.grid.template.fill = am4core.color("#2c3034");
+  var EixoXYLines = chart.series.push(new am4charts.LineSeries());
+  EixoXYLines.name = "Total";
+  EixoXYLines.dataFields.valueY = "Total"; 
+  EixoXYLines.dataFields.categoryX = "Venda";
+
+  EixoXYLines.strokeWidth = 3;
+  EixoXYLines.fill = am4core.color("black");
+  EixoXYLines.stroke = am4core.color("black");
+  EixoXYLines.tooltipText = "[bold]{name}: [bold]{valueY}[/]";
   
   chart.cursor = new am4charts.XYCursor();
 }
@@ -119,42 +104,35 @@ function chartmonth(valorMensal) {
   }];
   
   // Create axes
-  var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-  categoryAxis.dataFields.category = "Venda";
-  categoryAxis.title.text = "Vendas";
+  var EixoX = chart.xAxes.push(new am4charts.CategoryAxis());
+  EixoX.title.text = "Vendas";
+  EixoX.dataFields.category = "Venda";
   
-  categoryAxis.title.fontWeight = "bold";
-  categoryAxis.renderer.labels.template.fill = am4core.color("white");
-  categoryAxis.renderer.grid.template.fill = am4core.color("#2c3034");
-  categoryAxis.renderer.labels.template.stroke = am4core.color("white");
+  EixoX.title.fill = am4core.color("white");
+  EixoX.renderer.labels.template.stroke = am4core.color("white");
   
-  var  valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-  valueAxis.title.text = "Total";
-  valueAxis.title.fontWeight = "bold";
-  valueAxis.renderer.labels.template.fill = am4core.color("white");
-  valueAxis.renderer.grid.template.fill = am4core.color("#2c3034");
-  valueAxis.renderer.labels.template.stroke = am4core.color("white");
+  var  EixoY = chart.yAxes.push(new am4charts.ValueAxis());
+  EixoY.title.text = "Total";
+  EixoY.title.fill = am4core.color("white");
+  EixoY.renderer.labels.template.stroke = am4core.color("white");
   
-  // Create series
-  var series = chart.series.push(new am4charts.ColumnSeries3D());
-  series.dataFields.valueY = "Total";
-  series.dataFields.categoryX = "Venda";
-  series.name = "Total";
-  series.tooltipText = "{name}: [bold]{valueY}[/]";
+  var EixoXY3D = chart.series.push(new am4charts.ColumnSeries3D());
+  EixoXY3D.name = "Total";
+  EixoXY3D.dataFields.valueY = "Total";
+  EixoXY3D.dataFields.categoryX = "Venda";
   
-  series.title.fontWeight = "bold";
-  series.renderer.labels.template.fill = am4core.color("white");
-  series.renderer.grid.template.fill = am4core.color("#2c3034");
+  EixoXY3D.fill = am4core.color("#28a745");
+  EixoXY3D.stroke = am4core.color("#28a745");
   
-  var series2 = chart.series.push(new am4charts.ColumnSeries3D());
-  series2.dataFields.valueY = "Data"; 
-  series2.dataFields.categoryX = "Venda";
-  series2.name = "Data";
-  series2.tooltipText = "{name}: [bold]{valueY}[/]";
-  
-  series2.title.fontWeight = "bold";
-  series2.renderer.labels.template.fill = am4core.color("white");
-  series2.renderer.grid.template.fill = am4core.color("#2c3034");
+  var EixoXYLines = chart.series.push(new am4charts.LineSeries());
+  EixoXYLines.name = "Total";
+  EixoXYLines.dataFields.valueY = "Total"; 
+  EixoXYLines.dataFields.categoryX = "Venda";
+
+  EixoXYLines.strokeWidth = 3;
+  EixoXYLines.fill = am4core.color("black");
+  EixoXYLines.stroke = am4core.color("black");
+  EixoXYLines.tooltipText = "[bold]{name}: [bold]{valueY}[/]";
   
   chart.cursor = new am4charts.XYCursor();
 }
@@ -174,49 +152,43 @@ function chartYear(valorMensal) {
   
   chart.data = [{
     "Venda": "ISX9232",
-    "Total": valorMensal + 134,
+    "Total": valorMensal + 240,
   }, {
     "Venda": "ISX9212",
     "Total": valorMensal,
   }];
   
   // Create axes
-  var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-  categoryAxis.dataFields.category = "Venda";
-  categoryAxis.title.text = "Vendas";
+  var EixoX = chart.xAxes.push(new am4charts.CategoryAxis());
+  EixoX.title.text = "Vendas";
+  EixoX.dataFields.category = "Venda";
   
-  categoryAxis.title.fontWeight = "bold";
-  categoryAxis.renderer.labels.template.fill = am4core.color("white");
-  categoryAxis.renderer.grid.template.fill = am4core.color("#2c3034");
-  categoryAxis.renderer.labels.template.stroke = am4core.color("white");
+  EixoX.title.fill = am4core.color("white");
+  EixoX.renderer.labels.template.stroke = am4core.color("white");
   
-  var  valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-  valueAxis.title.text = "Total";
-  valueAxis.title.fontWeight = "bold";
-  valueAxis.renderer.labels.template.fill = am4core.color("white");
-  valueAxis.renderer.grid.template.fill = am4core.color("#2c3034");
-  valueAxis.renderer.labels.template.stroke = am4core.color("white");
+  var  EixoY = chart.yAxes.push(new am4charts.ValueAxis());
+  EixoY.title.text = "Total";
+  EixoY.title.fill = am4core.color("white");
+  EixoY.renderer.labels.template.stroke = am4core.color("white");
   
-  // Create series
-  var series = chart.series.push(new am4charts.ColumnSeries3D());
-  series.dataFields.valueY = "Total";
-  series.dataFields.categoryX = "Venda";
-  series.name = "Total";
-  series.tooltipText = "{name}: [bold]{valueY}[/]";
+  var EixoXY3D = chart.series.push(new am4charts.ColumnSeries3D());
+  EixoXY3D.name = "Total";
+  EixoXY3D.dataFields.valueY = "Total";
+  EixoXY3D.dataFields.categoryX = "Venda";
   
-  series.title.fontWeight = "bold";
-  series.renderer.labels.template.fill = am4core.color("white");
-  series.renderer.grid.template.fill = am4core.color("#2c3034");
+  EixoXY3D.fill = am4core.color("#dc3545");
+  EixoXY3D.stroke = am4core.color("#dc3545");
   
-  var series2 = chart.series.push(new am4charts.ColumnSeries3D());
-  series2.dataFields.valueY = "Data"; 
-  series2.dataFields.categoryX = "Venda";
-  series2.name = "Data";
-  series2.tooltipText = "{name}: [bold]{valueY}[/]";
+  var EixoXYLines = chart.series.push(new am4charts.LineSeries());
+  EixoXYLines.name = "Total";
+  EixoXYLines.dataFields.valueY = "Total"; 
+  EixoXYLines.dataFields.categoryX = "Venda";
+
+  EixoXYLines.strokeWidth = 3;
+  EixoXYLines.fill = am4core.color("black");
+  EixoXYLines.stroke = am4core.color("black");
+  EixoXYLines.tooltipText = "[bold]{name}: [bold]{valueY}[/]";
   
-  series2.title.fontWeight = "bold";
-  series2.renderer.labels.template.fill = am4core.color("white");
-  series2.renderer.grid.template.fill = am4core.color("#2c3034");
   
   chart.cursor = new am4charts.XYCursor();
 }

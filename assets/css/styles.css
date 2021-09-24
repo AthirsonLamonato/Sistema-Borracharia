@@ -16,7 +16,7 @@ main>.content {
 aside {
   position: absolute;
   width: 260px;
-  background: #2c3034;
+  background: #a2a2a257;
   padding: 0px;
   box-shadow: 0px 0px 5px 1px #000000;
   height: 100%;
@@ -30,14 +30,12 @@ aside {
 }
 
 body {
-  background-color: #0000008c;
+  background-color: #000000;
   font-weight: 300;
   width: 100%;
 }
 
-section.home{
-padding: 20px;
-}
+section.home{padding-top: 5px;}
 
 
 /* Buttons / Icons */
@@ -48,34 +46,41 @@ a {
 
 .Iconlarge {
   font-size: 20px;
-  font-size: 24px;
-  float: left;
-  margin-right: 15px;
-  line-height: 20px;
-  width: 30px;
+  font-size: 30px;
+  margin-right: 20px;
+  line-height: 0.8;
+  width: 20px;
   text-align: center;
   color: #f8f9fa;
   position: relative;
+  padding: 0;
 }
 
 .nav-item {
   margin-bottom: 1px;
+  display: block;
+  max-height: 140px;
 }
 
 a.nav-link {
- background-color:#ffc107!important;
+ border-color: #ffd700!important;
+ background: transparent!important;
  border-radius: 0!important;
+ border-width: 1px 0px 1px 0px;
+ border-style: solid;
+ color:white;
 }
 
 a.nav-link:hover{
-  background:linear-gradient( 60deg,#fd9e1a, #ffc107, #fd9e1a)!important
+  background:linear-gradient( 60deg,#6f560c, #ffd700, #6f560c)!important
 }
 
 a.nav-link p {
-  display: inline;
+  display: inline-block;
   white-space: nowrap;
   position: relative;
-  height: 50px;
+  margin: 0;
+  width: 70%;
 }
 
 .BtnHome i {
@@ -95,7 +100,7 @@ a.nav-link p {
   top: 15px;
   position: relative;
   font-family: fantasy;
-  color: #ffc107;
+  color: #ffffff;
   left: -5px;
 }
 
@@ -128,20 +133,19 @@ a.nav-link p {
   width: 100%;
   transform: inherit!important;
   margin: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border: 1px solid #fd9e1a;
+  background-color: #00000061;
+  border-radius: 0;
 }
 
 .dropdown-item {
-  color: #fd9e1a;
+  color: #ffffff;
 }
 
 .dropdown-item:focus,
 .dropdown-item:hover {
-  color: #16181b;
+  color: #ffd700;
   text-decoration: none;
-  background-color: white;
+  background-color: transparent;
 }
 
 
@@ -193,7 +197,7 @@ display: inline;
 .card.bg-primary,
 .card.card-rotate.bg-primary .front,
 .card.card-rotate.bg-primary .back {
-  background: linear-gradient( 60deg, #ffc107, #efb15c, #ffc107);
+  background: linear-gradient( 60deg,#996400,#c39a48, #ffd700,#c39a48, #996400);
 }
 
 .card .card-header-primary .card-icon,
@@ -224,7 +228,7 @@ display: inline;
 .card.bg-warning,
 .card.card-rotate.bg-warning .front,
 .card.card-rotate.bg-warning .back {
-  background: linear-gradient( 60deg, #ffa726, #fb8c00);
+  background: #fed600;
 }
 
 .card-stats .card-header .card-category:not([class*="text-"]) {
@@ -350,10 +354,9 @@ display: inline;
 
 footer {
   margin-top: 13px;
-  background: #ffc107;
+  background: #04060600;
   color: white;
   font-weight: bold;
-  box-shadow: 0px 0px 5px 1px #000000;
 }
 
 footer div div p{
@@ -486,7 +489,6 @@ footer div div p{
 
 .card {
   border: 0;
-  margin-bottom: 30px;
   margin-top: 30px;
   border-radius: 6px;
   color: #333333;
@@ -538,7 +540,7 @@ thead th{
 .container-principal{
   vertical-align: middle;
   justify-content: center;
-  margin-top: 10%;
+  margin-top: 8%;
 }
 
 .container-principal-vendas{
@@ -557,4 +559,33 @@ thead th{
 .btn{
   color:white;
   font-weight: bold;
+}
+
+#btnChartDia, #btnChartMes, #btnChartAno{
+  width: 100%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.card{
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.nav-link {
+  display: flex;
+  padding: 1rem 1rem;
+} 
+
+hr{
+  border-color:white;
+  margin-top: 1.5px;
+}
+
+.imgLogo{
+  width: 50%;
+  height: 50%;
+}
+
+.dropdown.show > a {
+  background: linear-gradient( 60deg,#996400,#c39a48, #ffd700,#c39a48, #996400)!important;
 }

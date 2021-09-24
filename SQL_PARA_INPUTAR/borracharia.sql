@@ -51,7 +51,7 @@ CREATE TABLE `vendas` (
   `ID` bigint(20) UNSIGNED NOT NULL,
   `PLACA` varchar(50) NOT NULL,
   `COR` varchar(50) NOT NULL,
-  `TAREFAID` int(11) NOT NULL,
+  `TAREFA` int(11) NOT NULL,
   `TIPO_PAGAMENTO` varchar(50) NOT NULL,
   `DATA_PAGAMENTO` date NOT NULL,
   `DATA_SERVICO` date NOT NULL,
@@ -63,7 +63,7 @@ CREATE TABLE `vendas` (
 -- Despejando dados para a tabela `vendas`
 --
 
-INSERT INTO `vendas` (`ID`, `PLACA`, `COR`, `TAREFAID`, `TIPO_PAGAMENTO`, `DATA_PAGAMENTO`, `DATA_SERVICO`, `TOTAL_SERVICO`, `OBSERVACAO`) VALUES
+INSERT INTO `vendas` (`ID`, `PLACA`, `COR`, `TAREFA`, `TIPO_PAGAMENTO`, `DATA_PAGAMENTO`, `DATA_SERVICO`, `TOTAL_SERVICO`, `OBSERVACAO`) VALUES
 (1, '5434SDA', 'Verde', 1, 'Cartão de Crédito', '2021-09-22', '2021-09-22', 200.5, 'Breve Observação'),
 (2, '5434SDA', 'Azul', 1, 'Cartão de Crédito', '2021-09-22', '2021-09-22', 200, 'Breve Observação');
 

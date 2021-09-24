@@ -2,23 +2,16 @@
 
 require_once 'app/src/dados.php';
 use \App\Entity\Vendas;
+error_reporting(E_ALL);
 
 $vendas = Vendas::AllVendas();
-setlocale(LC_MONETARY, 'it_IT');
-
 $valores = 0;
-
 foreach ($vendas as $venda) {
   $valores = $venda->total_mensal;
-
 }
 
-
 $valores = number_format($valores ,2,",",".");
-
 ?>
-
-
 <div class="content">
   <div class="container-fluid container-principal-dashboard">
 
@@ -62,9 +55,7 @@ $valores = number_format($valores ,2,",",".");
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="row">
       <div class="col-lg-4 col-md-6 col-sm-6 text-center">
         <button type="button" class="btn bg-warning" id="btnChartDia">Filtro de Dias</button>
       </div>
@@ -83,6 +74,5 @@ $valores = number_format($valores ,2,",",".");
       <div id="chartdivAno" style="width: 100%;height: 500px;"></div>
       <div id="chartdivDia" style="width: 100%;height: 500px;"></div>
     </div>
-
   </div>
 </div>

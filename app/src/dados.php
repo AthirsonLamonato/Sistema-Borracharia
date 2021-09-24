@@ -49,14 +49,14 @@
 
 	class Vendas{
 		public $id;
-		public $placa;
 		public $cor;
-		public $tarefaid;
-		public $tipo_pagamento;
-		public $data_pagamento;
+		public $placa;
+		public $tarefa;
+    public $observacao;
 		public $data_servico;
 		public $total_servico;
-    public $observacao;
+		public $tipo_pagamento;
+		public $data_pagamento;
 
 		public function cadastrar(){
 
@@ -64,14 +64,14 @@
 			$objDatabase = new Database('vendas');
 
 			$this->id = $objDatabase->insert([
-				'placa' => $this->placa,
 				'cor' => $this->cor,
-				'tarefaid' => $this->tarefaid,	
-				'tipo_pagamento' => $this->tipo_pagamento,
-				'data_pagamento' => $this->data_pagamento,
+				'placa' => $this->placa,
+				'tarefa' => $this->tarefa,	
+				'observacao' => $this->observacao,
 				'data_servico' => $this->data_servico,
 				'total_servico' => $this->total_servico,
-				'observacao' => $this->observacao
+				'tipo_pagamento' => $this->tipo_pagamento,
+				'data_pagamento' => $this->data_pagamento
 			]);
 			return true;
 
@@ -79,14 +79,14 @@
 
 		public function atualizar(){
 			return (new Database('vendas'))->update('id = '.$this->id, [
-				'placa' => $this->placa,
 				'cor' => $this->cor,
-				'tarefaid' => $this->tarefaid,	
-				'tipo_pagamento' => $this->tipo_pagamento,
-				'data_pagamento' => $this->data_pagamento,
+				'placa' => $this->placa,
+				'tarefa' => $this->tarefa,
+				'observacao' => $this->observacao,
 				'data_servico' => $this->data_servico,
 				'total_servico' => $this->total_servico,
-				'observacao' => $this->observacao
+				'tipo_pagamento' => $this->tipo_pagamento,
+				'data_pagamento' => $this->data_pagamento
 			]);
 		}
 

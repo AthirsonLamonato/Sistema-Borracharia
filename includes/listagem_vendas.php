@@ -1,19 +1,36 @@
 <?php
 
-$mensagem = '';
-if (isset($_GET['status'])) {
-  switch ($_GET['status']) {
-    case 'success':
-      $mensagem = '<div class="alert alert-success">Ação executada com sucesso!</div>';
-      break;
-    case 'error':
-      $mensagem = '<div class="alert alert-danger">Ação não executada!</div>';
-      break;			
+  $mensagem = '';
+  if (isset($_GET['status'])) {
+    switch ($_GET['status']) {
+      case 'success':
+        $mensagem = '<div class="alert alert-success">Ação executada com sucesso!</div>';
+        break;
+      case 'error':
+        $mensagem = '<div class="alert alert-danger">Ação não executada!</div>';
+        break;			
+    }
   }
-}
+
+  
+  function converter_formato_data($data){
+    $dt = str_replace("-", "/", $data);
+
+    return date('d/m/Y', strtotime($dt));
+  }
+
+  function formatar_valores($valor){
+    $valor = number_format($valor ,2,",",".");
+
+    return $valor;
+  }
 
 $resultados = '';
 foreach ($vendas as $objVendas) {
+
+  $total_servico = formatar_valores($objVendas->total_servico);
+  $data_servico = converter_formato_data($objVendas->data_servico);
+  $data_pagamento = converter_formato_data($objVendas->data_pagamento);
 
   $resultados .= '<tr class="text-center">
             <td>' . $objVendas->id . '</td>
@@ -21,14 +38,14 @@ foreach ($vendas as $objVendas) {
             <td>' . $objVendas->cor . '</td>
             <td>' . $objVendas->tarefa . '</td>
             <td>' . $objVendas->tipo_pagamento . '</td>
-            <td>' . $objVendas->data_pagamento . '</td>
-            <td>' . $objVendas->data_servico . '</td>
-            <td>' . $objVendas->total_servico . '</td>
+            <td>' . $data_pagamento . '</td>
+            <td>' . $data_servico . '</td>
+            <td>R$ ' . $total_servico . '</td>
             <td>
               <a href="edit_vendas.php?id='. $objVendas->id . '" class="btn btn-primary"><i class="fa fa-edit"></i></a>
               <a href="excluir_vendas.php?id=' . $objVendas->id . '" class="btn btn-danger"><i class="fa fa-trash"></i></a>
             </td>
-            </tr>';
+          </tr>';
 }
 
 $resultados = strlen($resultados) ? $resultados : '<tr><td colspan="8" class="text-center">Não há vendas cadastradas</td></tr>'

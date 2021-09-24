@@ -1,12 +1,11 @@
   <section class="home">
     <div class="home text-center">
-      <a class="BtnHome">
-        <p>Borracharia do Márcio</p>
+      <a href="index.php" aria-current="page">
+        <img class="imgLogo" src="./assets/img/logoMenu.png">
       </a>
     </div>
   </section>
-  <hr>
-  <section class="itens">
+  <section class="itens mt-5">
     <ul class="nav nav-pills flex-column mb-auto">
       
       <li class="nav-item">
@@ -17,7 +16,7 @@
 
       <li class="nav-item">
         <div class="dropdown">
-          <a href="#" class="nav-link dropdown-toggle active" id="dropdownTarefas" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-current="page">
+          <a href="#" class="nav-link dropdown-toggle" id="dropdownTarefas" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-current="page">
             <i class="fa fa-wrench Iconlarge"></i><p>Tarefas</p>
           </a>
           <div class="dropdown-menu" aria-labelledby="dropdownTarefas">
@@ -29,7 +28,7 @@
 
       <li class="nav-item">
         <div class="dropdown">
-          <a href="#" class="nav-link dropdown-toggle active" id="dropdownVendas" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-current="page">
+          <a href="#" class="nav-link dropdown-toggle" id="dropdownVendas" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-current="page">
             <i class="fa fa-tasks Iconlarge"></i><p>Vendas</p>
           </a>
           <div class="dropdown-menu" aria-labelledby="dropdownVendas">

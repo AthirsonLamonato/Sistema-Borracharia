@@ -12,13 +12,20 @@
 		}
 	}
 
+  function formatar_valores($valor){
+    $valor = number_format($valor ,2,",",".");
+    return $valor;
+  }
+
 	$resultados = '';
 	foreach ($tarefas as $objTarefas) {
+    $valorTarefa = formatar_valores($objTarefas->valor);
+
     $resultados .= '<tr class="text-center">
               <td>' . $objTarefas->id . '</td>
               <td>' . $objTarefas->nome . '</td>
               <td>' . $objTarefas->descricao . '</td>
-              <td>' . $objTarefas->valor . '</td>
+              <td>R$ ' . $valorTarefa . '</td>
               <td>
                 <a href="edit_tarefas.php?id='. $objTarefas->id . '">
                   <button type="button" class="btn btn-primary"><i class="fa fa-edit"></i></button>
